@@ -23,18 +23,54 @@ void factorial() {
 			cin >> n;
 	}
 	cout << n << "! = ";
-	for (int i = 0; i <= n; i++) {
+	for (int i = 1; i <= n; i++) {
 		final += i;
 		cout << i;
 		if (i < n) cout << " + ";
 	}
-	cout << " = " << final
+	cout << " = " << final << endl;
 }
 void arithmetic() {
 	// I recommend writing your arithmetic series code here
+	int n;
+	int diff;
+	int count;
+	int final = 0;
+	cout << "Please enter a starting number: ";
+	cin >> n;
+	cout << "Please enter the number of repetitions: ";
+	cin >> count;
+	cout << "Please enter the value to add each repetition: ";
+	cin >> diff;
+	while (count > 0) {
+		final += n;
+		cout << n;
+		if (count > 1) cout << " + ";
+		count--;
+		n += diff;
+	}
+	cout << " = " << final << endl;
 }
 void geometric() {
 	// I recommend writing your geometric series code here
+	int r;
+	int a;
+	int count;
+	int final = 0;
+	cout << "Please enter a starting number: ";
+	cin >> a;
+	cout << "Please enter the number of repetitions: ";
+	cin >> count;
+	cout << "Please enter the value to multiply by each repetition: ";
+	cin >> r;
+	final = a;
+	cout << a << " + ";
+	for (int i = 1; i < count; i++) {
+		final += a * pow(r,i);
+		cout << a * pow(r,i);
+		if (i < count - 1) cout << " + ";
+	}
+	cout << " = " << final << endl;
 }
 int main() {
 	int choice;
